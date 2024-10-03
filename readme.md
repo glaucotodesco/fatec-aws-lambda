@@ -35,24 +35,25 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
 - Crie uma tabela no DynamoDb, com o nome especificado pelo lambda
 
 - Edite a permissão AWS IAM que criou para o lambda, com as seguintes permissões, adicionando as políticas pelo JSON abaixo:
-{
-    "Version": "2012-10-17",
-    "Statement": [
+
         {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [  
-                "dynamodb:PutItem",
-                "dynamodb:DeleteItem",
-                "dynamodb:GetItem",
-                "dynamodb:Scan",
-                "dynamodb:Query",
-                "dynamodb:UpdateItem"
-            ],
-            "Resource": "YOUR-TABLE-ARN"
+            "Version": "2012-10-17",
+            "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": [  
+                    "dynamodb:PutItem",
+                    "dynamodb:DeleteItem",
+                    "dynamodb:GetItem",
+                    "dynamodb:Scan",
+                    "dynamodb:Query",
+                    "dynamodb:UpdateItem"
+                    ],
+                    "Resource": "YOUR-TABLE-ARN"
+                }
+            ]
         }
-    ]
-}
 
 - Copiar o ARN do DynamoDB table criada , em informações adicionaisdo dynamoDB, copia-la no lugar de YOUR-TABLE-ARN
 
