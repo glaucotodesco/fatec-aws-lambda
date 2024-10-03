@@ -48,7 +48,6 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
                 "dynamodb:Scan",
                 "dynamodb:Query",
                 "dynamodb:UpdateItem"
-  
             ],
             "Resource": "YOUR-TABLE-ARN"
         }
