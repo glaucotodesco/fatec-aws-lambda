@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <!-- Add some CSS to change Client UI -->
+    <style>
+      body {
+        background-color: #000000;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      button {
+        color: #000000;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: white;
+      }
+
+      label {
+        color: #fc9802;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+
+      input {
+        color: #232f3e;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        margin: 20px;
+      }
+
+      img {
+        display: block;
+        margin: 40px auto;
+        width: 900px;
+        height: auto;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      .titulo,
+      span {
+        color: #fc9802;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .setec {
+        color: purple;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+    <script>
+      // define the callAPI function that takes a first name and last name as parameters
+      var callAPI = (firstName, lastName, opinion) => {
+        // instantiate a headers object
+        var myHeaders = new Headers();
+        // add content type header to object
+        myHeaders.append("Content-Type", "application/json");
+        // using built in JSON utility package turn object to string and store in a variable
+        var raw = JSON.stringify({
+          firstName: firstName,
+          lastName: lastName,
+          opinion: opinion,
+        });
+        // create a JSON object with parameters for API call and store in a variable
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+          redirect: "follow",
+        };
+        // make API call with parameters and use promises to get response
+        fetch(
+          "https://i2mrzngq3a.execute-api.sa-east-1.amazonaws.com/Deploy1",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => alert(JSON.parse(result).body))
+          .catch((error) => console.log("error", error));
+      };
+    </script>
+  </head>
+
+  <body>
+    <h1 class="titulo">
+      Desenvolvimento de Aplicações ServerLess em AWS Lambda
+    </h1>
+
+    <h1 class="setec">Semanda da Tecnologia 2024</h1>
+
+    <form>
+      <label>Nome :</label>
+      <input type="text" id="fName" />
+      <label>Sobrenome :</label>
+      <input type="text" id="lName" />
+      <!-- set button onClick method to call function we defined passing input values as parameters -->
+      <button
+        type="button"
+        onclick="callAPI(document.getElementById('fName').value, document.getElementById('lName').value, document.getElementById('opinion').value)"
+      >
+        Enviar
+      </button>
+      <label><br />O que acharam sobre o curso, AWS :<br /></label>
+      <input type="text" id="opinion" />
+    </form>
+
+    <img src="image.png" alt="Image" />
+
+    <span>Aluno: Afonso Henrique de Eustaquio Araujo Melgar Ribes<br /></span>
+
+    <span>Prof. Orientador: Prof. Dr. Glauco Todesco</span>
+  </body>
+</html>
