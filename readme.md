@@ -69,3 +69,5 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
 
 - Agora é para a aplcação estar funcionando perfeitamente, enviando um formulário e enviando para o dynamoDB, lembrando que o link é público.
 
+- Tentar fazer a mesma coisa com o S3 Bucket, gerando um site estático com o index.html e tendo a mesma funcionalidade que o AWS Amplify
+
