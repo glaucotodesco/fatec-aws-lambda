@@ -30,7 +30,7 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
 
 - AWS Amplify e fazer o deploy do index.html do helloWorld, e ver como funciona o deploy do site na AWS Amplify
 
-- Criar Função Lambda com o código lambda no repositório, com o nome do database que irá criar no dynamoDB e função para o próprio lambda, que irá ser usado posteriormente
+- Criar Função Lambda com o código lambda no repositório, com o nome do database que irá criar no dynamoDB e função para o próprio lambda, que irá ser usado posteriormente. Aplicar o Role LabRole.
 
 - Crie uma tabela no DynamoDb, com o nome especificado pelo lambda
 
