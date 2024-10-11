@@ -32,9 +32,9 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
 
 - Criar Função Lambda com o código python do repositório, com o nome do database que irá criar no dynamoDB e função para o próprio lambda, que irá ser usado posteriormente. Aplicar o Role LabRole.
 
-- Crie uma tabela no DynamoDb, com o nome especificado pelo lambda
+- Crie uma tabela no DynamoDb, com o nome especificado pelo lambda, sendo "ID" a chave.
 
-- Edite a permissão AWS IAM que criou para o lambda, com as seguintes permissões, adicionando as políticas pelo JSON abaixo:
+- (Só se não usar o LabRole) Edite a permissão AWS IAM que criou para o lambda, com as seguintes permissões, adicionando as políticas pelo JSON abaixo:
 
         {
             "Version": "2012-10-17",
@@ -63,7 +63,7 @@ Desenvolvimento de Aplicações Serverless em AWS Lambda
 
 - Atualizar o Amplify, abrindo o arquivo index.html, e substituindo o link do API Gateway gerado pelo
 
--Gerar o arquivo. zip do index.html, adicionar a imagem a esta pasta .zip
+- Gerar o arquivo. zip do index.html, adicionar a imagem a esta pasta .zip
 
 - Fazer o deploy da nova pasta .zip e atualizar a aplicação
 
